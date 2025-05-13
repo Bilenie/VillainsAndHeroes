@@ -12,8 +12,11 @@ public class SupperApp {
         // Create a villain object with a name, health, and evilness
         SuperVillan superEvil = new SuperVillan("Demon", 100, 5);
         waitForEnter();
+
         superJoy.addPowerUp("glove", 10);
         superEvil.addPowerUp("trap", 7);
+
+        //To see which class the object we instantiate found and get the name.
 
         System.out.println(superJoy.getClass().getSimpleName());
         System.out.println(superEvil.getClass().getSimpleName());
@@ -21,24 +24,13 @@ public class SupperApp {
         // Display an introduction message
         System.out.println("\nWelcome to this Realm of WarZone!!!");
         waitForEnter();
+
         // Show the starting status of both characters
         System.out.println(superJoy.getStatus());
         waitForEnter();
+
         System.out.println(superEvil.getStatus());
         waitForEnter();
-
-        // to check if the object instance of which class...?
-        if (superJoy instanceof SuperHero) {
-            System.out.println("Hello");
-        } else {
-            System.out.println(" Not yet! ");
-        }
-        if (superEvil instanceof SuperVillan) {
-            System.out.println("Hello");
-        } else {
-            System.out.println(" Not yet! ");
-        }
-
 
         // Loop while both the hero and villain are still alive
         while (superJoy.isAlive() && superEvil.isAlive()) {
@@ -51,6 +43,13 @@ public class SupperApp {
 
             System.out.println(superJoy.getType());
             waitForEnter();
+
+            // to check if the object instance of this class print hello...
+            if (superJoy instanceof SuperHero) {
+                System.out.println("Hello");
+            } else {
+                System.out.println(" Not yet! ");
+            }
 
             System.out.println("Okay ! Game starts with " + superJoy.name);
             waitForEnter();
@@ -70,12 +69,23 @@ public class SupperApp {
             // Indicate the villain's turn
             System.out.println("Who are you ?\n ");
             waitForEnter();
+
             System.out.println(superEvil.getType());
-            System.out.println("Now its " + superEvil.name + " Turn! ");
+            waitForEnter();
+
+            // to check if the object instance of this class print hello...
+            if (superEvil instanceof SuperVillan) {
+                System.out.println("Hello");
+            } else {
+                System.out.println(" Not yet! ");
+            }
+
+            System.out.println("Okay! Now its " + superEvil.name + " Turn! ");
             waitForEnter();
 
             // Have the villain fight the hero
             superEvil.fight(superJoy);
+            waitForEnter();
 
             // Show the hero's updated status
             System.out.println(superJoy.getStatus());

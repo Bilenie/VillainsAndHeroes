@@ -44,6 +44,7 @@ public class SuperVillan extends SuperPerson {
                 //  End the game completely
             }
             System.out.println("feewwweeee!!! You live another day...");
+            SupperApp.waitForEnter();
             logHit(opponent);
 
         }

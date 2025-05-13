@@ -49,7 +49,7 @@ public class SuperHero extends SuperPerson {
         // int damageDone = damageAmount + this.experiencePoints;//store it in a variable to use
         //opponent.takeDamage(damageDone); // now the damage we take will be the damage above with xp.}}
 
-        System.out.println(damageAmount == 0 ? "Missed!!! \n" : "Winning side for this turn is \n" + this.name);
+        System.out.println(damageAmount == 0 ? "Missed!!! \n"  : "Winning side for this turn is \n" + this.name);
         if (damageAmount != 0) {
             int damageDone = damageAmount + this.experiencePoints;//store it in a variable to use
             opponent.takeDamage(damageDone); // now the damage we take will be the damage above with xp.}
