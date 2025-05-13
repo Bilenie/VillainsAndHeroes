@@ -52,7 +52,7 @@ public class SuperVillan extends SuperPerson {
     }
     @Override
     public String getType() {
-        return "";
+        return "SuperVillain";
     }// why is it only erroring only one childrent
 
 }
