@@ -13,7 +13,6 @@ public abstract class SuperPerson {
     protected HashMap<String, Integer> inventory = new HashMap<>();
 
 
-
     //Generate constructor for the 2 properties then manual for exp
     public SuperPerson(String name, int health) {
         this.name = name;
@@ -34,7 +33,7 @@ public abstract class SuperPerson {
         return this.health > 0;
     }
 
-   public abstract void fight(SuperPerson opponent);// => Abstract method
+    public abstract void fight(SuperPerson opponent);// => Abstract method
 
     public void takeDamage(int damageAmount) {
         //minus from health everytime attack happen, but below 0
@@ -66,19 +65,17 @@ public abstract class SuperPerson {
         }
     }
 
-    public void addPowerUp( String item , int value){
-        inventory.put(item , value);
+    public void addPowerUp(String item, int value) {
+        inventory.put(item, value);
     }
-  // public int getPowerBonus( String item) {
-//        //initialize the bonus damage from something
+    /* public int getPowerBonus( String item) {
+        //initialize the bonus damage from something
+        //return 0 if the hashmap inventory doesn't contain the name
+       //then get the name from the inventory and store it in a variable
+    }*/
+    public String getType() {
 
-//        //return 0 if the hashmap inventory doesn't contain the name
-//        //then get the name from the inventory and store it in a variable
-//
-//    }
-  public String getType() {
-
-    //return "SuperVillain";
-    return this.getClass().getSimpleName();
-}
+        //return "SuperVillain";
+        return this.getClass().getSimpleName();
+    }
 }

@@ -39,7 +39,7 @@ public class SuperHero extends SuperPerson {
 
             //get the point value for that item from the inventory HashMap
             //bonuse would be the int that represents the damage the item will do.
-           damageAmount += inventory.get(randomItem);
+            damageAmount += inventory.get(randomItem);
             inventory.remove(randomItem);// => this will make the key,value be used only once
         }
         opponent.takeDamage(damageAmount + this.experiencePoints);

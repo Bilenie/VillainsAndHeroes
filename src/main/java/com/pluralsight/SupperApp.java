@@ -28,14 +28,14 @@ public class SupperApp {
         waitForEnter();
 
         // to check if the object instance of which class...?
-        if(superJoy instanceof SuperHero){
+        if (superJoy instanceof SuperHero) {
             System.out.println("Hello");
-        } else{
+        } else {
             System.out.println(" Not yet! ");
         }
-        if(superEvil instanceof SuperVillan){
+        if (superEvil instanceof SuperVillan) {
             System.out.println("Hello");
-        }else{
+        } else {
             System.out.println(" Not yet! ");
         }
 
@@ -95,6 +95,7 @@ public class SupperApp {
         superEvil.printBattleLog();
 
     }
+
     //Method waits until user presses Enter gives control to user.
     public static void waitForEnter() {
         Scanner scanner = new Scanner(System.in);
