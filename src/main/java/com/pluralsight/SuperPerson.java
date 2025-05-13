@@ -1,5 +1,7 @@
 package com.pluralsight;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 public class SuperPerson {
@@ -8,6 +10,7 @@ public class SuperPerson {
     protected String name;// children/subclass can access it
     protected int health;
     protected int experiencePoints;
+    private Map<String, Integer> battleLog = new HashMap<>();
 
 
     //Generate constructor for the 2 properties then manual for exp
@@ -15,10 +18,24 @@ public class SuperPerson {
         this.name = name;
         this.health = health;
         //default the exp to 0 we are not passing it in a parameter
-        this.experiencePoints = 0;//manually dd
+        this.experiencePoints = 0;//manually add
     }
 
     // Method => for our superPerson to do
+//update the log entry for our SuperPerson
+    public void logHit(SuperPerson opponent) {
+        String name = opponent.name;
+        int count = battleLog.getOrDefault(name, 0);
+        battleLog.put(name, count + 1);
+    }
+
+    //print the battle log for a SuperPerson
+    public void printBattleLog() {
+        System.out.println("Battle log for " + name + ":");
+        for (Map.Entry<String, Integer> entry : battleLog.entrySet()) {
+            System.out.println(" - Hit " + entry.getKey() + ": " + entry.getValue() + " times");
+        }
+    }
 
     public boolean isAlive(){
         /*if(this.health>0){
