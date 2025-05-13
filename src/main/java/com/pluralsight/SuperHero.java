@@ -2,6 +2,7 @@ package com.pluralsight;
 
 import java.util.Random;
 
+
 //create an identical person similar to superPerson class copy of each other
 public class SuperHero extends SuperPerson {
 
@@ -12,12 +13,14 @@ public class SuperHero extends SuperPerson {
 //override methods of SuperPerson class=> polymorphism
         // we did this just to be different
         this.experiencePoints = powerLevel;
-        System.out.println(this.name + " has arrived with a power level of " + powerLevel);
+        System.out.println(this.name + " has Arrived with a Power Level of " + powerLevel);
     }
+
     //annotation to update a method on the parent class
     @Override
     public void fight(SuperPerson opponent) {
-        System.out.println("what!!! you got something to say!!!? says" + this.name);
+        System.out.println("What!!! you got something to say!!!? said " + this.name);
+        SupperApp.waitForEnter();
 
         //make the hero do a random amount of damage to the opponent.
         //the damage should be a random number plus the experiencePoints(powerLevel)
@@ -32,10 +35,11 @@ public class SuperHero extends SuperPerson {
         // int damageDone = damageAmount + this.experiencePoints;//store it in a variable to use
         //opponent.takeDamage(damageDone); // now the damage we take will be the damage above with xp.}}
 
-        System.out.println(damageAmount == 0 ? " Missed!!! " : "Winning side is " +this.name);
+        System.out.println(damageAmount == 0 ? "Missed!!! \n" : "Winning side for this turn is \n" + this.name);
         if (damageAmount != 0) {
             int damageDone = damageAmount + this.experiencePoints;//store it in a variable to use
             opponent.takeDamage(damageDone); // now the damage we take will be the damage above with xp.}
         }
+        logHit(opponent);
     }
 }

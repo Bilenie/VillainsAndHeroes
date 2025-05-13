@@ -7,45 +7,50 @@ public class SupperApp {
 
 
         // Create a hero object with a name, health, and powerLevel
-        SuperHero superJoy = new SuperHero("Joys", 100, 100);
+        SuperHero superJoy = new SuperHero("Joys", 100, 15);
 
         // Create a villain object with a name, health, and evilness
-        SuperVillan superEvil = new SuperVillan("Demon", 100, 100);
-
+        SuperVillan superEvil = new SuperVillan("Demon", 100, 5);
+        waitForEnter();
         // Display an introduction message
-        System.out.println(" Welcome to this Realm of WarZone!!!");
+        System.out.println("\nWelcome to this Realm of WarZone!!!");
+        waitForEnter();
         // Show the starting status of both characters
-        superJoy.getStatus();
-        superEvil.getStatus();
+        System.out.println(superJoy.getStatus());
+        waitForEnter();
+        System.out.println(superEvil.getStatus());
+        waitForEnter();
 
         // Loop while both the hero and villain are still alive
-        while (true) {
-            if (superJoy.isAlive() && superEvil.isAlive()) {
-                System.out.println("Let the Game begin!!!");
-            }
+        while (superJoy.isAlive() && superEvil.isAlive()) {
+
+            System.out.println("Let the Game begin!!!");
             waitForEnter();
             // Indicate the hero's turn
             System.out.println("Game starts with " + superJoy.name);
+            waitForEnter();
 
             // Have the hero fight the villain
             superJoy.fight(superEvil);
+            waitForEnter();
 
             // Show the villain's updated status
-            superEvil.getStatus();
+            System.out.println(superEvil.getStatus());
+            waitForEnter();
 
             // If the villain is no longer alive, break the loop
             if (!superEvil.isAlive()) {
                 break;
             }
             // Indicate the villain's turn
-            System.out.println("Game starts with " + superEvil.name);
+            System.out.println("Now its " + superEvil.name + " Turn! ");
             waitForEnter();
 
             // Have the villain fight the hero
             superEvil.fight(superJoy);
 
             // Show the hero's updated status
-            superJoy.getStatus();
+            System.out.println(superJoy.getStatus());
 
             // End of loop
         }
@@ -58,16 +63,17 @@ public class SupperApp {
         } else {
             System.out.println("The Winner is " + superEvil.name);// Otherwise => Announce the villain as the winner
         }
-
+        superJoy.printBattleLog();
+        superEvil.printBattleLog();
     }
+
     //Method waits until user presses Enter gives control to user.
-    public static void waitForEnter () {
+    public static void waitForEnter() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("\nPress Enter to continue...");
         scanner.nextLine();
     }
 }
-
  /*
   //instantiate object = > 2 people to make them fight
    SuperPerson trueHero = new SuperPerson("God",100);
