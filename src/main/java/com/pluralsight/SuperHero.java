@@ -1,5 +1,7 @@
 package com.pluralsight;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 
@@ -28,6 +30,18 @@ public class SuperHero extends SuperPerson {
         //else deal the damage and say about being on the winning side
 
         int damageAmount = new Random().nextInt(21);//damage amount is bn 0-21 not 0
+        if (!inventory.isEmpty()) {
+            //create a new list of just the keys from the HashMap (glove, hammer, etc....)
+            List<String> items = new ArrayList<>(inventory.keySet());
+
+            //get a random item name from the above list we just made and store it in randomeItem
+            String randomItem = items.get(new Random().nextInt(items.size()));
+
+            //get the point value for that item from the inventory HashMap
+            //bonuse would be the int that represents the damage the item will do.
+           damageAmount += inventory.get(randomItem);
+            inventory.remove(randomItem);// => this will make the key,value be used only once
+        }
         opponent.takeDamage(damageAmount + this.experiencePoints);
 
         //if(damageAmount == 0){

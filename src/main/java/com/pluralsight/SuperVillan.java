@@ -1,5 +1,7 @@
 package com.pluralsight;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class SuperVillan extends SuperPerson {
@@ -16,9 +18,21 @@ public class SuperVillan extends SuperPerson {
     public void fight(SuperPerson opponent) {
         System.out.println("You haven't seen nothing yet!!! says " + this.name);
 
-        int damageAmount = new Random().nextInt(21); // 0 to 9
+        int damageAmount = new Random().nextInt(21); // 0 to 20
         if (damageAmount > 0) {
             int totalDamage = damageAmount + this.experiencePoints;
+            if (!inventory.isEmpty()) {
+                //create a new list of just the keys from the HashMap (glove, hammer, etc....)
+                List<String> items = new ArrayList<>(inventory.keySet());
+
+                //get a random item name from the above list we just made and store it in random Item
+                String randomItem = items.get(new Random().nextInt(items.size()));
+
+                //get the point value for that item from the inventory HashMap
+                //bonus would be the int that represents the damage the item will do.
+                totalDamage += inventory.get(randomItem);
+                inventory.remove(randomItem);// => this will make the key,value be used only once
+            }
             opponent.takeDamage(totalDamage);
             System.out.println("Attack hits for " + totalDamage + " damage!");
             SupperApp.waitForEnter();
@@ -33,6 +47,7 @@ public class SuperVillan extends SuperPerson {
             logHit(opponent);
 
         }
+
 
     }
 

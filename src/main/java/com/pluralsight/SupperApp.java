@@ -12,6 +12,9 @@ public class SupperApp {
         // Create a villain object with a name, health, and evilness
         SuperVillan superEvil = new SuperVillan("Demon", 100, 5);
         waitForEnter();
+        superJoy.addPowerUp("glove", 10);
+        superEvil.addPowerUp("trap", 7);
+
         // Display an introduction message
         System.out.println("\nWelcome to this Realm of WarZone!!!");
         waitForEnter();
@@ -65,8 +68,8 @@ public class SupperApp {
         }
         superJoy.printBattleLog();
         superEvil.printBattleLog();
-    }
 
+    }
     //Method waits until user presses Enter gives control to user.
     public static void waitForEnter() {
         Scanner scanner = new Scanner(System.in);
