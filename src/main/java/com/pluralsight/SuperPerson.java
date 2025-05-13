@@ -69,12 +69,12 @@ public abstract class SuperPerson {
     public void addPowerUp( String item , int value){
         inventory.put(item , value);
     }
-   public int getPowerBonus( String item) {
+  // public int getPowerBonus( String item) {
 //        //initialize the bonus damage from something
 
 //        //return 0 if the hashmap inventory doesn't contain the name
 //        //then get the name from the inventory and store it in a variable
 //
 //    }
-   }
+   public abstract String getType();
 }

@@ -56,4 +56,9 @@ public class SuperHero extends SuperPerson {
         }
         logHit(opponent);
     }
+
+    @Override
+    public String getType() {
+        return "";
+    }
 }
