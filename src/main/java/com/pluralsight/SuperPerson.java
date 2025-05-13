@@ -76,5 +76,9 @@ public abstract class SuperPerson {
 //        //then get the name from the inventory and store it in a variable
 //
 //    }
-   public abstract String getType();
+  public String getType() {
+
+    //return "SuperVillain";
+    return this.getClass().getSimpleName();
+}
 }

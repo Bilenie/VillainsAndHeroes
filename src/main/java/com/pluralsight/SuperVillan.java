@@ -50,9 +50,11 @@ public class SuperVillan extends SuperPerson {
 
 
     }
-    @Override
-    public String getType() {
-        return "SuperVillain";
-    }// why is it only erroring only one childrent
 
+  /*  @Override
+    public String getType() {
+
+        //return "SuperVillain";
+        return this.getClass().getSimpleName();
+    }*/
 }
