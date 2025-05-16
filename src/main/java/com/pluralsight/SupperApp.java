@@ -46,7 +46,7 @@ public class SupperApp {
 
             // to check if the object instance of this class print hello...
             if (superJoy instanceof SuperHero) {
-                System.out.println("Hello");
+                System.out.println("Hello SuperJoy");
             } else {
                 System.out.println(" Not yet! ");
             }
@@ -75,7 +75,7 @@ public class SupperApp {
 
             // to check if the object instance of this class print hello...
             if (superEvil instanceof SuperVillan) {
-                System.out.println("Hello");
+                System.out.println("Hello  SuperEvil");
             } else {
                 System.out.println(" Not yet! ");
             }
@@ -98,8 +98,11 @@ public class SupperApp {
         // If the hero is still alive
         if (superJoy.isAlive() && !superEvil.isAlive()) {
             System.out.println("The Winner is " + superJoy.name);// Announce the hero as the winner
-        } else {
-            System.out.println("The Winner is " + superEvil.name);// Otherwise => Announce the villain as the winner
+        } else if (!superJoy.isAlive() && superEvil.isAlive()){
+            System.out.println("The Winner is " + superEvil.name);// if the opposite of the above => Announce the villain as the winner
+        }else{
+            System.out.println(" It's a Tie, Enter to Try again!");
+            waitForEnter();
         }
         superJoy.printBattleLog();
         superEvil.printBattleLog();
