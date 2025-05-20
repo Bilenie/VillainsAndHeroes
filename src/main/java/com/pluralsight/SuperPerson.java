@@ -2,7 +2,7 @@ package com.pluralsight;
 
 import java.util.HashMap;
 import java.util.Random;
-
+// implements Fightable
 public abstract class SuperPerson {
     //Protected properties can possibly be access by our children, grand children,etc...
     // and stay in the family

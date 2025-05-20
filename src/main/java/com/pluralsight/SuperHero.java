@@ -6,7 +6,7 @@ import java.util.Random;
 
 
 //create an identical person similar to superPerson class copy of each other
-public class SuperHero extends SuperPerson {
+public class SuperHero extends SuperPerson implements Fightable {
 
     public SuperHero(String name, int health, int powerLevel) {//We pass a powerLevel to parameter
         super(name, health);

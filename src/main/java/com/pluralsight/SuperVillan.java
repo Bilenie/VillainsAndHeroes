@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class SuperVillan extends SuperPerson {
+public class SuperVillan extends SuperPerson implements Fightable{
 
     public SuperVillan(String name, int health, int evilNees) {//We pass a powerLevel to parameter
         super(name, health);
